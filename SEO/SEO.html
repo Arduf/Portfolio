@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thawatchai Sroipho - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- content font -->
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Notable&display=swap" rel="stylesheet">
+    <!-- head font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        .darker-grotesque {
+          font-family: "Darker Grotesque", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 22px;
+        }
+
+        .dm-serif-text-regular {
+          font-family: "DM Serif Text", serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .nav-container {
+            background-color: #A34343;
+            padding: 2rem 0;
+        }
+        .nav-link, .btn-container span {
+            color: white;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .btn-container span:hover {
+            color: #f8d7da;
+        }
+        .btn-container span {
+            cursor: pointer;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card-img-overlay {
+            background-color: rgba(163, 67, 67, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .card:hover .card-img-overlay {
+            opacity: 1;
+        }
+        .fullscreen-card:hover .card-img-overlay {
+            background-color: rgba(163, 67, 67, 0.7);
+        }
+        .section-title {
+            color: #A34343;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        footer {
+            background-color: #A34343;
+            color: white;
+        }
+        .offcanvas-center {
+            max-width: 800px;
+            width: 90%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1056;
+        }
+        .offcanvas-backdrop-center {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1055;
+        }
+        .fullscreen-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .fullscreen-row {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+        .fullscreen-col {
+            flex: 1 0 50%;
+            max-width: 50%;
+            height: 50%;
+        }
+        .fullscreen-card {
+            width: 100%;
+            height: 100%;
+        }
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-img-top {
+          height: 400px;
+          object-fit: contain;
+          padding: 1rem;
+        }
+        @media (max-width: 768px) {
+            .fullscreen-col {
+                flex: 1 0 100%;
+                max-width: 100%;
+                height: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="btn-container animate__animated animate__slideInDown dm-serif-text-regular">
+                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" style="font-size: 72px;">THAWATCHAI SROIPHO</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-top h-100" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title fw-bold" id="offcanvasTopLabel">My Learning Journey</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="card h-100 learning-card animate__animated animate__fadeInUp">
+                            <img src="https://zeevector.com/wp-content/uploads/Google-Ads-Logo-Transparent.png" class="card-img-top p-3" alt="Google Ads logo">
+                            <div class="card-body">
+                                <h5 class="card-title darker-grotesque">Google Advertisement</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 learning-card animate__animated animate__fadeInUp animate__delay-1s">
+                            <img src="https://thumbs.dreamstime.com/b/html-css-js-icon-set-web-development-logo-icon-set-html-css-javascript-programming-symbol-html-css-js-icon-set-web-178080904.jpg" class="card-img-top p-3" alt="HTML, CSS, and JavaScript logos">
+                            <div class="card-body">
+                                <h5 class="card-title darker-grotesque">HTML CSS JS</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 learning-card animate__animated animate__fadeInUp animate__delay-2s">
+                            <img src="https://www.cogdigital.com.au/wp-content/uploads/2023/07/SEO-AGENCY-SYDNEY-COG-DIGITAL.png" class="card-img-top p-3" alt="SEO illustration">
+                            <div class="card-body">
+                                <h5 class="card-title darker-grotesque">Search Engine Optimization</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 learning-card animate__animated animate__fadeInUp animate__delay-3s">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/2048px-WordPress_blue_logo.svg.png" class="card-img-top p-3" alt="WordPress logo">
+                            <div class="card-body">
+                                <h5 class="card-title darker-grotesque">WordPress</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate -->
+    <section class="container my-5 darker-grotesque animate__animated animate__fadeInRight">
+        <h2 class="section-title text-center" style="font-size: 48px;">Certification</h2>
+        <div class="card mb-3 p-5 rounded-4">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-6">
+                    <img src="SEO_training.jpg" class="img-fluid rounded-start" alt="SEO Training Certificate">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bolder" style="text-align: right;">The Ultimate SEO Training 2024 + SEO For WordPress Websites</h3>
+                        <p class="card-text mt-4" style="text-align: justify;">I have gained extensive knowledge in SEO, understanding how it works and how to effectively implement it. I can structure and optimize websites to achieve top rankings on search engine results pages. My training includes strategies used by London's leading SEO agency, equipping me with the skills to identify and target the best keywords for any website. I can analyze competitors' keyword strategies and discover numerous content ideas for blogs. I am proficient in building high-quality SEO backlinks that significantly impact rankings. I have mastered technical SEO to outsmart competitors and know how to use internal links to rank highly for competitive keywords. Additionally, I am equipped to handle negative SEO attacks, ensuring sustained and positive search engine performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr style="margin-top: 10%;">
+
+    <!-- Writing -->
+    <section class="container my-5 darker-grotesque animate__animated animate__fadeInRight">
+        <h2 class="section-title text-center" style="font-size: 48px;">My Writing</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card text-bg-dark image-card">
+                    <img src="https://api-fashion.dior.com/couture/var/dior/storage/images/horizon/logo-dior/25334685-1-fre-FR/logo-dior_mobile_share.jpg" class="card-img" alt="Christian Dior logo" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Christian Dior" data-text="Luxury fashion house founded by Christian Dior." data-updated="Last updated 3 mins ago">
+                    <div class="card-img-overlay">
+                        <a href="https://thasro.dreamhosters.com/dior/" class="card-title text-white text-decoration-none fw-bolder">CHRISTIAN DIOR</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-bg-dark image-card">
+                    <img src="https://i.pinimg.com/736x/d1/aa/c9/d1aac9ca68abe81dfbab955a9073167c.jpg" class="card-img" alt="Chanel logo" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Chanel" data-text="Iconic French luxury fashion house." data-updated="Last updated 3 mins ago">
+                    <div class="card-img-overlay">
+                        <a href="https://thasro.dreamhosters.com/chanel/" class="card-title text-white text-decoration-none fw-bolder">CHANEL</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-bg-dark image-card">
+                    <img src="https://thasro.dreamhosters.com/wp-content/uploads/2024/01/1-fragrance-wheel-1024x1024.jpg" class="card-img" alt="Fragrance Wheel" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Fragrance Wheel" data-text="A tool used to classify and describe perfumes." data-updated="Last updated 3 mins ago">
+                    <div class="card-img-overlay">
+                        <a href="https://thasro.dreamhosters.com/fragrancewheel/" class="card-title text-white text-decoration-none fw-bolder">Fragrance Wheel</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-bg-dark image-card">
+                    <img src="https://t3.ftcdn.net/jpg/02/95/46/96/360_F_295469621_VTqeoGDaXTsj0v1QkdKIuyAamynTUPep.jpg" class="card-img" alt="Thailand Season with Perfume" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Thailand Season with Perfume" data-text="Exploring seasonal fragrances in Thailand." data-updated="Last updated 3 mins ago">
+                    <div class="card-img-overlay">
+                        <a href="#" class="card-title text-white text-decoration-none fw-bolder">Thailand Season with Perfume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr style="margin-top: 10%;">
+
+    <!-- Knowledge -->
+    <section class="container-fluid bg-light py-5 darker-grotesque animate__animated animate__fadeInRight">
+        <div class="container">
+            <h2 class="section-title text-center" style="font-size: 48px;">My Knowledge</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="Structure_SEO.png" class="img-fluid rounded-4" alt="SEO Structure">
+                </div>
+                <div class="col-md-8 p-5">
+                    <div class="bg-white p-4 rounded-4 shadow">
+                        <h3 class="mb-3 fw-bolder">SEO & Content Marketing Expertise</h3>
+                        <p style="text-align: justify;">I applied the SEO for WordPress Training and Content Marketing for Business courses. I aimed to enhancing website ranking on search result pages. My knowledge includes keyword research and analysis, on-page optimization, content creation, and link-building strategies, etc. I'm using SEO tools such as Google Analytics, Google Search Console, Google Tag Manager, Google Keyword Planner, and SEMrush to optimize websites and implement data strategies. Moreover, my coding skills can improve the UX/UI for users, including mobile-friendliness, website speed, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr style="margin-top: 10%;">
+
+    <!-- Assistance Tools -->
+    <section class="container my-5 darker-grotesque animate__animated animate__fadeInRight">
+        <h2 class="section-title text-center" style="font-size: 48px;">Assistance Tools</h2>
+        <div class="fullscreen-container">
+            <div class="fullscreen-row">
+                <div class="fullscreen-col">
+                    <div class="card text-bg-dark fullscreen-card" id="card1">
+                        <img src="Google-Analyics-4-Banner.jpg" class="card-img" alt="Google Analytics">
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                            <h5 class="card-title fw-bolder">Google Analytics (GA4)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="fullscreen-col">
+                    <div class="card text-bg-dark fullscreen-card" id="card2">
+                        <img src="google-search-console7508.jpg" class="card-img" alt="Google Search Console">
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                            <h5 class="card-title fw-bolder">Google Search Console (GSC)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="fullscreen-col">
+                    <div class="card text-bg-dark fullscreen-card" id="card3">
+                        <img src="Tag_manager_logo.png" class="card-img" alt="Google Tag Manager">
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                            <h5 class="card-title fw-bolder">Google Tag Manager</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="fullscreen-col">
+                    <div class="card text-bg-dark fullscreen-card" id="card4">
+                        <img src="yoast-banner-1024x512.png" class="card-img" alt="Yoast SEO">
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                            <h5 class="card-title fw-bolder">Yoast SEO</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-5 darker-grotesque animate__animated animate__fadeInRight">
+        <div class="container">
+            <div class="row text-center d-flex justify-content-center">
+                <div class="col-md-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!" class="text-white">Coding Page</a>
+                    </h6>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!" class="text-white">SEO Page</a>
+                    </h6>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!" class="text-white">WordPress Page</a>
+                    </h6>
+                </div>
+            </div>
+            <hr class="my-5" />
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p>This portfolio was created for job applications, not allowed to publish. The images and videos are my experiments from all the courses that I applied. I spent money on buying DreamHost, others I used free tools. That's probably my limitation to optimize my experiments. However, I will improve my Digital Marketing skills until becoming an expert in the future. Thank you for your consideration and for exploring my portfolio. Appreciate it.</p>
+                    <hr>
+                    <p>Thank you for visiting my portfolio. I'm grateful for your interest in my work. Feel free to reach out at drafthawatchai@gmail.com or connect with me on Line and Phone-call. © Thawatchai Sroipho, 2024. Special thanks to my mentors and collaborators.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2024 Portfolio: <a class="text-white" href="#">Thawatchai Sroipho</a>
+        </div>
+    </footer>
+
+    <!-- Offcanvas popup center -->
+    <div class="offcanvas-center" id="offcanvasCenter" aria-labelledby="offcanvasCenterLabel" style="display: none;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasCenterLabel"></h5>
+            <button type="button" class="btn-close" id="closeCenterOffcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvasBody">
+            <!-- Content will be dynamically inserted here -->
+        </div>
+    </div>
+    <div class="offcanvas-backdrop-center" id="offcanvasBackdropCenter" style="display: none;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    function openOffcanvas(content) {
+        document.getElementById('offcanvasBody').innerHTML = content;
+        document.getElementById('offcanvasCenter').style.display = 'block';
+        document.getElementById('offcanvasBackdropCenter').style.display = 'block';
+    }
+
+    document.getElementById('card1').addEventListener('click', function() {
+        openOffcanvas(`
+            <div class="card m-3">
+                <img src="GA4.png" class="card-img-top" alt="Google Analytics 4">
+                <div class="card-body">
+                    <h5 class="card-title text-black text-center">Google Analytics (GA4)</h5>
+                    <p class="card-text" style="text-align: justify;">Website tracking tool that use for report website traffic. I used the feature that creating custom dashboards and reports to track user engagement, traffic sources, and conversion rates. It can help understand different group of the user behavier to optimize which website have low user experiences that help to improve marketing strategiesand optimizing user experience. Additionally, I used the explorations in Google analytic to customize the data insight that can demonstrate the specific data report.</p>
+                    <p style="text-align: justify;">I was sync campaign of the Google Ads to Google analytic to tracking all of traffic when the user have interacted with my Ad. I used Google Analytic track my A/B testing ad to analyzed each data which testing is better performing.</p>
+                </div>
+            </div>
+        `);
+    });
+
+    document.getElementById('card2').addEventListener('click', function() {
+        openOffcanvas(`
+            <div class="card mb-3">
+                <img src="GSC_Shot.png" alt="Google Search Console">
+                <div class="card-body">
+                    <h5 class="card-title text-black text-center">Google Search Console (GSC)</h5>
+                    <p class="card-text" style="text-align: justify;">I used Google Search console for monitoring, maintaining, and sorlving the issue of my website. During I creating my website,  I will consider the structure and make it easily to indexing by Google. Therefore, If I ensure my sitemap have the understandable to indexing of Google then, submitting sitemap to Google Search Console. It can be used for analyze the search performance data, including clicks, impressions, and average position, to understand how user interact with search results and identify opportunities for improvement. Additionally,  I also used the tool to manage website security by addressing issue from my website to solving correctly point.</p>
+                </div>
+            </div>
+        `);
+    });
+
+    document.getElementById('card3').addEventListener('click', function() {
+        openOffcanvas(`
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title text-black text-center">Google Tag Manager (GTM)</h5>
+                    <p class="card-text" style="text-align: justify;">The tool for managing marketing tags on a website without requiring code change in my website. I have performed includes setting up and configuring Google Tag Manager accounts, mange tags, triggers, and tracking implementation. I was created tags to my blogpost to monitoring engage view, Javascript error, form submission and issues, etc. I applied tag to my conversion ad then, I setup trigger to form submission to receiving valuable insight from user interactions and conversion rate.</p>
+                </div>
+            </div>
+        `);
+    });
+
+    document.getElementById('card4').addEventListener('click', function() {
+        openOffcanvas(`
+            <div class="card mb-3">
+                <img src="YOAST.Shot.png" alt="Yoast SEO">
+                <div class="card-body">
+                    <h5 class="card-title text-black text-center">Yoast SEO</h5>
+                    <p class="card-text" style="text-align: justify;">Yoast SEO works can providing me the on-page optimization features, including keyword analysis, readability checks, and metadata management. I used Yoast SEO to ensure each page and post on my website is optimized for target keywords by following the plugin's recommendations for keyword density, meta descriptions, and internal linking. I used Yoast SEO features to generating XML sitemap with every my webpages and also provide me the information if my website have duplicate content issues.</p>
+                </div>
+            </div>
+        `);
+    });
+
+    document.getElementById('closeCenterOffcanvas').addEventListener('click', function() {
+        document.getElementById('offcanvasCenter').style.display = 'none';
+        document.getElementById('offcanvasBackdropCenter').style.display = 'none';
+    });
+
+    document.getElementById('offcanvasBackdropCenter').addEventListener('click', function() {
+        document.getElementById('offcanvasCenter').style.display = 'none';
+        document.getElementById('offcanvasBackdropCenter').style.display = 'none';
+    });
+    </script>
+</body>
+</html>

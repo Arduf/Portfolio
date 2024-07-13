@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การเลือกน้ำหอมตามฤดูกาลในประเทศไทย</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .ibm-plex-sans-thai-looped-extralight {
+            font-family: "IBM Plex Sans Thai Looped", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        .season-card {
+            height: 100%;
+        }
+        .perfume-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        /* Each Perfumes */
+        .perfume-item {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .perfume-item:hover {
+            transform: scale(1.0);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .perfume-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .perfume-item:hover .perfume-image {
+            filter: blur(3px);
+        }
+
+        .perfume-details {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: rgba(255,255,255,0.9);
+            padding: 15px;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .perfume-item:hover .perfume-details {
+            top: 0;
+            opacity: 1;
+        }
+
+        .perfume-name {
+            transition: all 0.3s ease;
+        }
+
+        .perfume-item:hover .perfume-name {
+            opacity: 0;
+        }
+
+        .list-group-item.perfume-item {
+            transition: all 0.3s ease;
+        }
+
+        .list-group-item.perfume-item:hover {
+            background-color: white !important;
+            color: black !important;
+        }
+
+        .list-group-item.perfume-item:hover .perfume-details p {
+            color: black !important;
+        }
+
+        /* Nav bar */
+        .card:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navigation:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="text-dark ibm-plex-sans-thai-looped-extralight">
+        <div class="card-img-overlay">
+            <nav class="navbar navbar-expand-lg bg-transparent shadow-none p-3 mb-5 rounded">
+                <div class="container-fluid shadow p-3 mb-5 bg-body-tertiary rounded"> 
+                    <a class="navigation navbar-brand text-black text-decoration-none fw-bolder ms-4" style="font-size: 64px;" href="https://thasro.dreamhosters.com/">
+                        Scent blend Hub
+                    </a>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav mx-3">
+                            <li class="nav-item">
+                                <a class="navigation nav-link active text-black text-decoration-none fw-bolder" aria-current="page" href="https://thasro.dreamhosters.com/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navigation nav-link text-black text-decoration-none fw-bolder" href="https://thasro.dreamhosters.com/about-us/">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navigation nav-link text-black text-decoration-none fw-bolder" href="https://thasro.dreamhosters.com/our-blog-post/">Our Blog Post</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="container mt-4 ibm-plex-sans-thai-looped-extralight">
+        <h1 class="mb-4 text-center display-4" style="margin-top: 10%;">เลือกน้ำหอมอย่างไรให้เหมาะกับแต่ละฤดูของประเทศไทย</h1>
+
+        <p class="lead">
+            การใช้น้ำหอมที่เหมาะสมกับสภาพอากาศจะสามารถช่วยให้เราเลือกกลิ่นหอมให้เหมาะกับแต่ละฤดูได้มากขึ้น นอกจากนี้ในแต่ละฤดูที่มีปัจจัยต่างๆที่แตกต่างกันยังช่วยทำให้กลิ่นของน้ำหอมติดทนนานขึ้น เนื่องจากการเลือกส่วนผสมของน้ำหอมที่เหมาะกับอุณหภูมิเเละสภาพอากาศ ดังนั้นน้ำหอมจะสามารถกระจายกลิ่นได้นานในเเต่ละสภาพอากาศ ประกอบด้วยปัจจัยหลักๆดังนี้
+        </p>
+
+        <h2 class="mt-5 mb-4">ปัจจัยของสภาพอากาศที่มีต่อน้ำหอม</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-white text-center" style="background-color: #102C57;">
+                    <div class="card-body">
+                        <h3 class="card-title">อุณหภูมิ</h3>
+                        <p class="card-text">อุณหภูมิเป็นปัจจัยที่สำคัญกับการได้กลิ่นของเรา โดยที่ความร้อนสามารถขยายโมเลกุลให้มีขนาดใหญ่ขึ้นได้ ซึ่งจะทำให้กลิ่นของน้ำหอมหนักเเละกระจายมากขึ้นมากขึ้น ในขณะที่โมเลกุลที่มีขนาดเล็กกว่า จะมีการกระจายกลิ่นที่น้อยกว่า เนื่องจากความร้อนน้อยกว่า ทำให้การขยายตัวของโมเลกุลน้อยลง</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-white text-center" style="background-color: #102C57;">
+                    <div class="card-body">
+                        <h3 class="card-title">ความชื้น</h3>
+                        <p class="card-text">ความชื้นสามารถกักเก็บโมเลกุลกลิ่นหอม ทำให้กลิ่นหอมติดอยู่นานขึ้น น้ำหอมที่หนักกว่ามักจะมีความหอมติดทนนานในสภาพอากาศชื้น กลิ่นหอมเบาจะระเหยเร็วขึ้น ทิ้งกลิ่นหอมบางๆ และน่าพึงพอใจ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-white text-center" style="background-color: #102C57;">
+                    <div class="card-body">
+                        <h3 class="card-title">อารมณ์</h3>
+                        <p class="card-text">ฤดูกาลต่าง ๆ สามารถกระตุ้นอารมณ์ที่แตกต่างกัน ฤดูร้อนอาจทำให้คุณต้องการกลิ่นหอมเบาและกระปรี้กระเปร่า ในขณะที่ฤดูฝนอาจทำให้คุณต้องการกลิ่นที่สดชื่นและสะอาด สภาพอากาศที่เย็นกว่าอาจทำให้คุณอยากใช้กลิ่นหอมที่อบอุ่นและปลอบประโลม ซึ่งอากาศที่เเตกต่างอาจจะส่งผลหลักที่ทำให้คุณได้หสนนึกถึงกิจกรรมต่างๆที่เคยทำเเละชวนให้นึกถึงได้</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-5 mb-4">กลิ่นน้ำหอมที่เหมาะกับเเต่ละฤดูของประเทศไทย</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card season-card">
+                    <div class="card h-100 text-white text-center p-3" style="background-color: #102C57;">
+                        <h3 class="card-title">ฤดูร้อน</h3>
+                        <p class="card-text">สภาพอากาศร้อนและชื้นทำให้กลิ่นหอมเบาและสดชื่นเหมาะสมที่สุด กลิ่นซิตรัส เช่น มะนาว, เกรปฟรุต, หรือเบอร์กาม็อต และกลิ่นดอกไม้เบา ๆ เช่น ดอกมะลิหรือลาเวนเดอร์ จะให้ความรู้สึกเย็นสบายและกระปรี้กระเปร่า</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card season-card">
+                    <div class="card h-100 text-white text-center p-3" style="background-color: #102C57;">
+                        <h3 class="card-title">ฤดูฝน</h3>
+                        <p class="card-text">เนื่องจากสภาพอากาศมีความชื้นเยอะ กลิ่นหอมที่มีกลิ่นดินและเขียวชอุ่มจะเป็นตัวเลือกที่น่าหลงไหล กลิ่นเหล่านี้มักถูกอธิบายว่าเป็นกลิ่นสดสะอาดและกระปรี้กระเปร่า ช่วยลดความชื้นได้ มองหากลิ่นของเวติเวอร์, มอส หรือชาเขียว</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card season-card">
+                    <div class="card h-100 text-white text-center p-3" style="background-color: #102C57;">
+                        <h3 class="card-title">ฤดูหนาว</h3>
+                        <p class="card-text">อุณหภูมิที่เย็นลงทำให้คุณสามารถลองใช้กลิ่นหอมที่อบอุ่นและซับซ้อนมากขึ้น กลิ่นไม้, เครื่องเทศ หรือวานิลลาตะวันออก จะให้ความรู้สึกอบอุ่นและน่าเชิญชวนในช่วงเวลาที่หวนนึกถึงปีใหม่เมื่อยังวันวาน</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- น้ำหอมแนะนำ -->
+        <h2 class="mt-5 mb-4 text-center my-5 display-4">น้ำหอมที่ Scent Blend Hub แนะนำ</h2>
+        <div class="container">
+            <h2 class="mt-5 mb-4 text-center mt-5">ฤดูร้อน (กลิ่น Fresh)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3>สำหรับผู้ชาย: Citrus Aromatic</h3>
+                    <div class="list-group">
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://www.armanibeauty.com.my/www/product-content/acqua-di-gio-eau-de-parfum/images/acqua-di-gio-edp-banner-prod.jpg" 
+                                     alt="Acqua di Gio by Giorgio Armani" 
+                                     class="perfume-image rounded me-3">
+                                <span>Acqua di Gio</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Marine notes, Bergamot</p>
+                                <p><strong>Middle Notes:</strong> Geranium, Sage</p>
+                                <p><strong>Base Notes:</strong> Patchouli, Incense</p>
+                                <p>น้ำหอมที่ให้กลิ่นสดชื่นของทะเลผสมผสานกับความหอมของดอกไม้และสมุนไพร เหมาะสำหรับวันที่อากาศร้อน</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://shop.dior.co.th/cdn/shop/products/Y0685240_F068528009_E01_GHC.jpg?v=1709256800" 
+                                     alt="Dior Sauvage" 
+                                     class="perfume-image rounded me-3">
+                                <span>Dior Sauvage</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Bergamot, Pepper</p>
+                                <p><strong>Middle Notes:</strong> Sichuan Pepper, Lavender, Pink Pepper, Vetiver, Patchouli, Geranium, Elemi</p>
+                                <p><strong>Base Notes:</strong> Ambroxan, Cedar, Labdanum</p>
+                                <p>น้ำหอมที่ให้กลิ่นสดชื่นและเผ็ดร้อน เหมาะสำหรับผู้ชายที่ต้องการกระจายกลิ่นที่มีความโดดเด่นเเละหนักแน่นในอากาศร้อน</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://m.media-amazon.com/images/I/51rytjxCjSL._AC_UF1000,1000_QL80_.jpg" 
+                                     alt="Light Blue Living Stromboli by Dolce&Gabbana" 
+                                     class="perfume-image rounded me-3">
+                                <span>Light Blue Living Stromboli</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Grapefruit, Lemon</p>
+                                <p><strong>Middle Notes:</strong> Marine notes, Ozonic notes</p>
+                                <p><strong>Base Notes:</strong> Ambergris, Musk, Woody notes</p>
+                                <p>น้ำหอมที่ให้กลิ่นสดชื่นของผลไม้ตระกูลส้มผสมผสานกับกลิ่นทะเล เหมาะสำหรับวันที่อากาศร้อนจัด</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <h3>สำหรับผู้หญิง: Floral Fruity</h3>
+                    <div class="list-group">
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://i5.walmartimages.com/seo/CH-DIOR-MISS-DIOR-BLOOMING-BOUQUET-EDT-SPRAY-3-4-OZ-MISS-DIOR-BLOOMING-BOUQUET-CH-DIOR-EDT-SPRAY-3-4-OZ-100-ML-W_76f64e3c-8f0c-4dcc-b7ab-f1d991adbaae.7ce09c2cb7e38f37dc5a5906b37308da.jpeg" 
+                                     alt="Miss Dior Blooming Bouquet by Christian Dior" 
+                                     class="perfume-image rounded me-3">
+                                <span>Miss Dior Blooming Bouquet</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Sicilian Orange</p>
+                                <p><strong>Middle Notes:</strong> Pink Peony, Damascus Rose</p>
+                                <p><strong>Base Notes:</strong> White Musk</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมของดอกไม้ผสมผสานกับความสดชื่นของผลไม้ เหมาะสำหรับการใช้งานในช่วงกลางวันของฤดูร้อน</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://shop.dior.co.th/cdn/shop/products/Y0715201_F071521009_E01_GHC.jpg?v=1706759905" 
+                                     alt="J'adore Eau de Toilette by Dior" 
+                                     class="perfume-image rounded me-3">
+                                <span>J'adore Eau de Toilette</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Magnolia, Ylang-Ylang</p>
+                                <p><strong>Middle Notes:</strong> Damascus Rose, Jasmine</p>
+                                <p><strong>Base Notes:</strong> Vanilla, Musk</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมหวานของดอกไม้นานาพันธุ์ เหมาะสำหรับการใช้งานในช่วงกลางคืนของฤดูร้อน</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://www.scentbird.com/blog/wp-content/uploads/2021/09/daisy-vs-daisy-eau-so-fresh-which-one-is-better.jpg" 
+                                     alt="Daisy Love Eau So Fresh by Marc Jacobs" 
+                                     class="perfume-image rounded me-3">
+                                <span>Daisy Love Eau So Fresh</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Grapefruit, Pear, Raspberry</p>
+                                <p><strong>Middle Notes:</strong> Daisy, Jasmine, Rose</p>
+                                <p><strong>Base Notes:</strong> Musk, Cedar, Warm Woods</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมสดชื่นของผลไม้และดอกไม้ เหมาะสำหรับการใช้งานในช่วงกลางวันของฤดูร้อน</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <h2 class="mt-5 mb-4 text-center mt-5">ฤดูฝน (damp and wet)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3>สำหรับผู้ชาย: Green Fougere</h3>
+                    <div class="list-group">
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://assets.hermes.com/is/image/hermesproduct/terre-d-hermes-eau-de-toilette--107189V0-worn-9-0-0-800-800_g.jpg" 
+                                     alt="Terre d'Hermes" 
+                                     class="perfume-image rounded me-3">
+                                <span>Terre d'Hermes</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Orange, Grapefruit</p>
+                                <p><strong>Middle Notes:</strong> Pepper, Pelargonium</p>
+                                <p><strong>Base Notes:</strong> Vetiver, Cedar, Patchouli</p>
+                                <p>น้ำหอมที่ให้กลิ่นสดชื่นของส้มผสมผสานกับความเข้มของไม้ เหมาะสำหรับการใช้งานในวันที่อากาศชื้น ฝนตก</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://www.isseymiyakeparfums.com/dw/image/v2/BCMQ_PRD/on/demandware.static/-/Sites-itemmaster_isseymiyake/default/dwc92679e8/Main%20image/Issey-Miyake-eau-issey-perfume-men-main.png?sw=1000&sh=1000&sm=cut&sfrm=jpg&q=100" 
+                                     alt="Issey Miyake L'Eau d'Issey Pour Homme" 
+                                     class="perfume-image rounded me-3">
+                                <span>Issey Miyake L'Eau d'Issey Pour Homme</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Yuzu, Lemon, Bergamot</p>
+                                <p><strong>Middle Notes:</strong> Blue Water Lily, Nutmeg, Water Pepper</p>
+                                <p><strong>Base Notes:</strong> Tobacco, Sandalwood, Cedar, Vetiver, Musk</p>
+                                <p>น้ำหอมที่ให้กลิ่นสดชื่นของน้ำผสมผสานกับความเข้มของไม้ สามารถใช้หลังจากฝนหยุดตกเเละต้องการออกไปข้างนอก</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://img.kingpowerclick.com/cdn-cgi/image/format=auto/kingpower-com/image/upload/w_640,h_640/v1651118011/prod/960387-L2.jpg" 
+                                     alt="Polo Ralph Lauren Blue Eau de Toilette" 
+                                     class="perfume-image rounded me-3">
+                                <span>Polo Ralph Lauren Blue Eau de Toilette</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Cucumber, Mandarin Orange, Melon</p>
+                                <p><strong>Middle Notes:</strong> Basil, Sage, Geranium</p>
+                                <p><strong>Base Notes:</strong> Suede, Woodsy Notes, Musk</p>
+                                <p>น้ำหอมที่ให้กลิ่นสดชื่นของผลไม้และสมุนไพรผสมผสานกับความนุ่มนวลของหนัง เหมาะสำหรับการใช้งานในวันที่อากาศชื้น ในยามค่ำคืน</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h3>สำหรับผู้หญิง: Floral Green</h3>
+                    <div class="list-group">
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://inwfile.com/s-l/z9u3qy.jpg" 
+                                     alt="Gucci Bloom Acqua di Fiori" 
+                                     class="perfume-image rounded me-3">
+                                <span>Gucci Bloom Acqua di Fiori</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Galbanum, Blackcurrant Buds</p>
+                                <p><strong>Middle Notes:</strong> Jasmine, Tuberose, Honeysuckle</p>
+                                <p><strong>Base Notes:</strong> Musk, Sandalwood</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมสดชื่นของดอกไม้ผสมผสานกับความเขียวสดของใบไม้</p>
+                            </div>
+                        </div>
+                    
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://plummour.com/wp-content/uploads/2021/10/The-Different-Company-De-Bachmakov-edp-100ml-unisex-1-800x800.jpg" 
+                                     alt="Eau de Nil" 
+                                     class="perfume-image rounded me-3">
+                                <span>Eau de Nil</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Bergamot, Lemon, Grapefruit</p>
+                                <p><strong>Middle Notes:</strong> Green Tea, Jasmine, Rose</p>
+                                <p><strong>Base Notes:</strong> Musk, Cedar</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมสดชื่นของผลไม้ตระกูลส้มผสมผสานกับชาเขียวและดอกไม้</p>
+                            </div>
+                        </div>
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://down-th.img.susercontent.com/file/6fd5b0b208ffa6f723ec426c86e08b4d" 
+                                     alt="The Vert" 
+                                     class="perfume-image rounded me-3">
+                                <span>The Vert</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Green Tea, Bergamot</p>
+                                <p><strong>Middle Notes:</strong> Jasmine, Magnolia</p>
+                                <p><strong>Base Notes:</strong> Cedar, Musk</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมสดชื่นของชาเขียวผสมผสานกับดอกไม้</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <h2 class="mt-5 mb-4 text-center mt-5">ฤดูหนาว (สบายและเหมาะสม)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3>สำหรับผู้ชาย: Woody Spicy</h3>
+                    <div class="list-group">
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://shop.dior.co.th/cdn/shop/products/Y0685240_F068528009_E01_GHC.jpg?v=1709256800" 
+                                     alt="Dior Sauvage" 
+                                     class="perfume-image rounded me-3">
+                                <span>Dior Sauvage</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Bergamot, Pepper</p>
+                                <p><strong>Middle Notes:</strong> Sichuan Pepper, Lavender, Pink Pepper, Vetiver, Patchouli, Geranium, Elemi</p>
+                                <p><strong>Base Notes:</strong> Ambroxan, Cedar, Labdanum</p>
+                                <p>น้ำหอมที่ให้กลิ่นเผ็ดร้อนผสมผสานกับความหอมของไม้</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://cdn.cosmostore.org/cache/front/shop/products/615/1899713/350x350.jpg" 
+                                     alt="Bleu de Chanel Eau de Parfum" 
+                                     class="perfume-image rounded me-3">
+                                <span>Bleu de Chanel Eau de Parfum</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Grapefruit, Lemon, Mint, Pink Pepper</p>
+                                <p><strong>Middle Notes:</strong> Ginger, Nutmeg, Jasmine, Iso E Super</p>
+                                <p><strong>Base Notes:</strong> Incense, Vetiver, Cedar, Sandalwood, Patchouli, Labdanum, White Musk</p>
+                                <p>น้ำหอมที่ให้กลิ่นสดชื่นของผลไม้ตระกูลส้มผสมผสานกับความเข้มของเครื่องเทศและไม้</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://assets.central.co.th//adobe/dynamicmedia/deliver/dm-aid--a63a8cb3-c2cf-4aa3-94b6-5b289ff1edc4/giorgio-armani-menfragrancearmanicodeleparfum75ml-cds95721071-1.jpg?preferwebp=true&quality=85&width=550" 
+                                     alt="Armani Code" 
+                                     class="perfume-image rounded me-3">
+                                <span>Armani Code</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Bergamot, Lemon</p>
+                                <p><strong>Middle Notes:</strong> Star Anise, Olive Blossom, Guaiac Wood</p>
+                                <p><strong>Base Notes:</strong> Tonka Bean, Tobacco, Leather</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมหวานของโทนก้าบีนผสมผสานกับความเข้มของยาสูบและหนัง</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <h3>สำหรับผู้หญิง: Oriental Vanilla</h3>
+                    <div class="list-group">
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://www.yslbeautyth.com/dw/image/v2/BFZM_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwab9b5fa9/Fragrance/WW-40701YSL/WW-40701YSL-1-opium-eau-de-parfum_50ml_Alt1.jpg?sw=465&sh=465&sm=cut&sfrm=jpg&q=85" 
+                                     alt="YSL Black Opium" 
+                                     class="perfume-image rounded me-3">
+                                <span>YSL Black Opium</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Pink Pepper, Orange Blossom, Pear</p>
+                                <p><strong>Middle Notes:</strong> Coffee, Jasmine, Bitter Almond, Licorice</p>
+                                <p><strong>Base Notes:</strong> Vanilla, Patchouli, Cedar, Cashmere Wood</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมหวานของวานิลลาผสมผสานกับความเข้มของกาแฟ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://img.kingpowerclick.com/cdn-cgi/image/format=auto/kingpower-com/image/upload/w_1280,h_1280/v1668389686/prod/971634-L1.jpg" 
+                                     alt="Shalimar Eau de Parfum" 
+                                     class="perfume-image rounded me-3">
+                                <span>Shalimar Eau de Parfum</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Bergamot, Lemon, Cedar, Mandarin Orange</p>
+                                <p><strong>Middle Notes:</strong> Iris, Patchouli, Vetiver, Jasmine, Rose</p>
+                                <p><strong>Base Notes:</strong> Vanilla, Tonka Bean, Leather, Sandalwood, Opoponax, Civet, Incense</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมหวานของวานิลลาผสมผสานกับความเข้มของเครื่องเทศและดอกไม้</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://www.jeban.com/uploads/reviews/product/105916/111668_8a61bd6da8.jpg" 
+                                     alt="Baccarat Rouge 540 Eau de Parfum" 
+                                     class="perfume-image rounded me-3">
+                                <span>Baccarat Rouge 540 Eau de Parfum</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Saffron, Jasmine</p>
+                                <p><strong>Middle Notes:</strong> Amberwood, Ambergris</p>
+                                <p><strong>Base Notes:</strong> Fir Resin, Cedar</p>
+                                <p>น้ำหอมที่ให้กลิ่นหอมหวานของอำพันผสมผสานกับความเข้มของไม้</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="mt-4"></h3>
+        <ul class="list-group mb-4">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3>กลิ่นสำหรับ Unisex: Fresh Citrus</h3>
+                    <div class="list-group">
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://assets.central.co.th//adobe/dynamicmedia/deliver/dm-aid--10b0dfa0-7f2e-439d-aa2f-127450f8e74a/calvin-klein-ckoneeaudetoilette100ml-cds14546587-1.jpg?preferwebp=true&quality=85&width=550" 
+                                     alt="CK One" 
+                                     class="perfume-image rounded me-3">
+                                <span class="perfume-name">CK One</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Bergamot, Cardamom, Pineapple, Papaya</p>
+                                <p><strong>Middle Notes:</strong> Jasmine, Violet, Rose, Nutmeg</p>
+                                <p><strong>Base Notes:</strong> Sandalwood, Amber, Musk, Cedar</p>
+                                <p>น้ำหอมยูนิเซ็กส์ที่ให้กลิ่นสดชื่นของผลไม้และดอกไม้ผสมผสานกับความอบอุ่นของไม้ เหมาะสำหรับการใช้งานได้ทุกฤดูกาล</p>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group-item perfume-item rounded-3 bg-dark text-white" style="background-color: #102C57 !important;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://img.kingpowerclick.com/cdn-cgi/image/format=auto/kingpower-com/image/upload/w_640,h_640/v1681697825/prod/938525-L1.jpg" 
+                                     alt="Le Labo Bergamote 22" 
+                                     class="perfume-image rounded me-3">
+                                <span class="perfume-name">Le Labo Bergamote 22</span>
+                            </div>
+                            <div class="perfume-details mt-5">
+                                <p><strong>Top Notes:</strong> Bergamot, Grapefruit</p>
+                                <p><strong>Middle Notes:</strong> Petitgrain, Amber</p>
+                                <p><strong>Base Notes:</strong> Vetiver, Vanilla, Musk</p>
+                                <p>น้ำหอมที่ให้กลิ่นสดชื่นของส้มเบอร์กามอตผสมผสานกับความหอมหวานของวานิลลา เหมาะสำหรับการใช้งานในฤดูร้อนและฤดูใบไม้ผลิ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ul>
+
+        <h2 class="mt-5 mb-4">เทคนิคการใช้น้ำหอมที่ถูกต้อง เพื่อให้น้ำหอมติดทนนานยิ่งขึ้น</h2>
+        <ul class="list-group mb-4">
+            <li class="list-group-item">
+                <h5>การสเปรย์น้ำหอมบนเครื่องแปรงผม</h5>
+                <p>สเปรย์น้ำหอมเบา ๆ ลงบนแปรงผมแล้วแปรงผมด้วย ผมมีความสามารถในการกระจายกลิ่นหอมได้ดีมาก และกลิ่นนี้อาจสามารถอยู่ได้นานกว่าบนผิวหนังเป็นพิเศษในสภาพอากาศที่ชื้น อย่างไรก็ตาม ควรระมัดระวังจากน้ำหอมที่มีแอลกอฮอล์เข้มที่อาจทำให้ผมแห้งได้</p>
+            </li>
+            <li class="list-group-item">
+                <h5>การใช้น้ำหอมบนเสื้อผ้าแบบกลยุทธ์</h5>
+                <p>ใช้สเปรย์น้ำหอมเบา ๆ บนที่ประกอบเสื้อผ้า เช่น ผ้าพันคอ, เสื้อแจ็คเก็ต, หรือคอลลาร์เสื้อ ใยในเสื้อผ้าสามารถกักตัวของโมเลกุลกลิ่นหอมได้และปล่อยออกมาช้าๆตลอดวัน</p>
+            </li>
+            <li class="list-group-item">
+                <h5>เทคนิคน้ำมันวาสลีน</h5>
+                <p>ทาเจลลีนเจลไม่มีกลิ่นบนจุดชีพก่อนที่จะสเปรย์น้ำหอมของคุณ วาสลีนสร้างอุปสรรคที่ช่วยให้โมเลกุลกลิ่นหอมติดกับผิวหนังของคุณ โดยอาจเสริมอายุการใช้งานของมันได้</p>
+            </li>
+            <li class="list-group-item">
+                <h5>การเลเยอร์กับโลชั่นที่มีกลิ่นหอม</h5>
+                <p>หากมีโลชั่นร่างกายหรือผลิตภัณฑ์ดูแลผมที่มีกลิ่นที่ตรงกับน้ำหอมของคุณ ลองเลเยอร์กลิ่นจำพวกนี้ร่วมกัน มันสามารถสร้างประสบการณ์กลิ่นที่เป็นระบบมากขึ้นและอาจช่วยเพิ่มอายุการใช้งานเนื่องจากผลิตภัณฑ์ที่กระจายกลิ่นร่วมกัน</p>
+            </li>
+            <li class="list-group-item">
+                <h5>การใส่ไฟท์พอยท์</h5>
+                <p>พื้นที่เหล่านี้สร้างความร้อนธรรมชาติมากขึ้นซึ่งช่วยกระจายน้ำหอมของคุณ สเปรย์บนข้อมือ, ศอกภายใน, คอ, และหลังหู</p>
+            </li>
+            <li class="list-group-item">
+                <h5>เก็บน้ำหอมให้ถูกวิธี</h5>
+                <p>เก็บขวดน้ำหอมในที่เย็นและมืด ห่างจากแสงแดดและความร้อน เพื่อช่วยในการรักษาความสมบูรณ์ของกลิ่นหอม</p>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer ibm-plex-sans-thai-looped-extralight">
+
+        <!-- Widgets - Bootstrap Brain Component -->
+        <div class="bg-light py-3 py-md-5 py-xl-8 border-top border-light-subtle mt-5">
+        <div class="container overflow-hidden">
+            <div class="row gy-3 gy-md-5 gy-xl-0 align-items-sm-center">
+            <div class="col-xs-12 col-sm-6 col-xl-3 order-0 order-xl-0">
+                <div class="footer-logo-wrapper text-center text-sm-start">
+                <a href="https://thasro.dreamhosters.com/">
+                    <h3 class="text-black" style="text-decoration: none;">Scent Blend Hub</h3>
+                </a>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-xl-6 order-2 order-xl-1">
+                <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link link-secondary px-2 px-md-3" href="https://thasro.dreamhosters.com/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-secondary px-2 px-md-3" href="https://thasro.dreamhosters.com/about-us/">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-secondary px-2 px-md-3" href="https://thasro.dreamhosters.com/our-blog-post/">Blog Post</a>
+                </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-xl-3 order-1 order-xl-2">
+                <div class="social-media-wrapper">
+                <ul class="list-unstyled m-0 p-0 d-flex justify-content-center justify-content-sm-end">
+                    <li class="me-3">
+                    <a href="#!" class="link-dark link-opacity-75-hover">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        </svg>
+                    </a>
+                    </li>
+                    <li class="me-3">
+                    <a href="#!" class="link-dark link-opacity-75-hover">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                        </svg>
+                    </a>
+                    </li>
+                    <li class="me-3">
+                    <a href="#!" class="link-dark link-opacity-75-hover">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                        </svg>
+                    </a>
+                    </li>
+                    <li class="">
+                    <a href="#!" class="link-dark link-opacity-75-hover">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                        </svg>
+                    </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Copyright - Bootstrap Brain Component -->
+        <div class="bg-light py-3 py-md-5 border-top border-light-subtle">
+        <div class="container overflow-hidden">
+            <div class="row">
+            <div class="col">
+                <div class="footer-copyright-wrapper text-center">
+                &copy; 2024. All Rights Reserved.
+                </div>
+                <div class="credits text-secondary text-center mt-2 fs-8">
+                <p>Scent Blend Hub</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
