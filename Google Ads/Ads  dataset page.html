@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google Ads Learning Session - Campaign Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .highlight-row {
+            background-color: #fff9c4;
+        }
+        .analysis-section {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-5">
+            <h1 class="display-4">Google Ads Learning Session</h1>
+            <p class="lead">Analysis of Shopping Mall Paid Search Campaign Dataset</p>
+        </header>
+
+        <section class="mb-5">
+            <p>This analysis is based on an open dataset from a <a href="https://www.kaggle.com/datasets/marceaxl82/shopping-mall-paid-search-campaign-dataset?resource=download" target="_blank">Shopping Mall Paid Search Campaign</a>. The dataset consists of actual data from a five-month paid search campaign conducted in 2021 by a US shopping mall, anonymized for privacy reasons. The campaign aimed to promote coupons and promo codes via paid search, including details on ad group advertising, clicks, conversions, impressions, revenues, and costs.</p>
+        </section>
+
+        <section id="excelData" class="mb-5">
+            <!-- Excel data will be inserted here -->
+        </section>
+
+        <section class="analysis-section">
+            <h2>Campaign Analysis</h2>
+            <p>The highlighted row demonstrates impressive performance with 36,462 impressions and 10,418 clicks, resulting in a click-through rate (CTR) of 40%. This high CTR indicates that the ad copy and targeting are highly relevant to the audience. Additionally, the ad group recorded 2,294 conversions with a conversion rate of 12%, suggesting an effective landing page.</p>
+            
+            <p>Key observations:</p>
+            <ul>
+                <li>The cost per click (CPC) of $1.27 is reasonable given the high conversion rate.</li>
+                <li>The calculated return on ad spend (ROAS) is 98.22% (ROAS = revenue/cost).</li>
+                <li>While this ROAS is slightly below the ideal 100% profitability threshold, it's close to breaking even.</li>
+            </ul>
+
+            <p>Overall campaign insights:</p>
+            <ul>
+                <li>The "Shop - Phrase - Mob - Competitor" ad group has the highest ROAS at 683.33%, but shows room for improvement in ad copy to boost impressions and clicks.</li>
+                <li>Ad groups with low ROAS and zero conversions should be reevaluated. Consider decreasing CPC or removing them from the campaign.</li>
+                <li>Focus on improving high-potential ad groups like "Shop - 1:1 - Mob - [shop coupon code]" that have low conversion rates.</li>
+                <li>Implement negative keywords, especially for broad and phrase match campaigns, to prevent irrelevant clicks.</li>
+                <li>Prioritize improving the quality score of landing pages for high CTR ad groups to boost conversion rates.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script>
+        // Function to fetch and display Excel data
+        function fetchAndDisplayExcelData() {
+           // Specify the path to your Excel file
+           const excelFilePath = 'Ads dataset.xlsx';
+
+           // Fetch the Excel file
+           fetch(excelFilePath)
+               .then(response => response.arrayBuffer())
+               .then(data => {
+                   // Read the Excel file
+                   const workbook = XLSX.read(data, { type: 'array' });
+                   // Get the first sheet
+                   const sheetName = workbook.SheetNames[0];
+                   const worksheet = workbook.Sheets[sheetName];
+                   // Convert the sheet to JSON
+                   const json = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+                   // Generate HTML table
+                   let html = '<table>';
+                   json.forEach((row, rowIndex) => {
+                       // Highlight the seventh row (index 6, since indexing starts at 0)
+                       const rowClass = rowIndex === 7 ? 'highlight-row' : '';
+                       html += `<tr class="${rowClass}">`;
+                       row.forEach((cell, colIndex) => {
+                           html += `<td>${cell !== undefined ? cell : ''}</td>`;
+                       });
+                       html += '</tr>';
+                   });
+                   html += '</table>';
+
+                   // Display the HTML
+                   document.getElementById('excelData').innerHTML = html;
+               })
+               .catch(error => console.error('Error fetching the Excel file:', error));
+       }
+
+       // Call the function to fetch and display the data when the page loads
+       window.onload = fetchAndDisplayExcelData;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
